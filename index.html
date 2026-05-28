@@ -4,30 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>НК БУД — Будівельна компанія</title>
+  <meta name="description" content="Будівництво, реконструкція та ремонт об'єктів будь-якої складності. Генеральний підряд під ключ у Києві.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <section class="hero">
-    <!-- ФОН: сюда позже вставишь своё фото/видео.
-         Чтобы поставить фото — раскомментируй <img> ниже и укажи путь,
-         либо в styles.css у .hero пропиши background-image. -->
+
+  <!-- ===== HERO / ПЕРШИЙ ЕКРАН ===== -->
+  <section class="hero" id="top">
+    <!-- ФОН: сюди пізніше вставиш своє фото/відео.
+         Фото — розкоментуй <img> нижче і вкажи шлях,
+         або в styles.css у .hero пропиши background-image. -->
     <!-- <img class="hero-bg" src="hero.jpg" alt=""> -->
     <div class="hero-overlay"></div>
 
     <header class="site-header">
-      <a href="#" class="logo">
+      <a href="#top" class="logo">
         <span class="logo-mark">НК&nbsp;БУД</span>
         <span class="logo-sub">Будівельна компанія</span>
       </a>
 
       <nav class="nav">
-        <a href="#">Про компанію</a>
-        <a href="#">Послуги ▾</a>
-        <a href="#">Портфоліо</a>
-        <a href="#">Контакти</a>
+        <a href="#about">Про компанію</a>
+        <a href="#services">Послуги</a>
+        <a href="#portfolio">Портфоліо</a>
+        <a href="#contacts">Контакти</a>
       </nav>
 
       <div class="header-right">
@@ -42,7 +45,7 @@
       <div class="hero-text">
         <h1>Будівництво,<br>реконструкція та ремонт<br>об'єктів будь-якої<br>складності</h1>
         <p class="hero-lead">Гарантуємо виконання робіт під ключ та здачу об'єкта у строк.</p>
-        <a href="#" class="btn">Розрахунок вашого проекта</a>
+        <a href="#contacts" class="btn">Розрахунок вашого проекта</a>
       </div>
 
       <div class="hero-stats">
@@ -61,10 +64,170 @@
       </div>
     </div>
 
-    <div class="scroll-down">
+    <a href="#services" class="scroll-down">
       <span class="scroll-word">ВНИЗ</span>
       <span class="scroll-arrow">⌄</span>
+    </a>
+  </section>
+
+  <!-- ===== ПОСЛУГИ ===== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-eyebrow">Наші послуги</div>
+      <h2 class="section-title">Що ми робимо</h2>
+      <p class="section-intro">Ми перетворюємо складні технічні завдання на надійні та готові до експлуатації рішення. Наша команда об'єднує багаторічний досвід проектування із сучасними методами розрахунків, забезпечуючи точність на кожному етапі.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-num">01</div>
+          <h3>Проектування та креслення</h3>
+          <p>Розробляємо повний пакет технічної документації. Наші креслення відповідають державним стандартам і вимогам безпеки, що дозволяє уникнути помилок під час будівництва.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">02</div>
+          <h3>Складні інженерні розрахунки</h3>
+          <p>Проводимо перевірку конструкцій на міцність, стабільність та ефективність із сучасним ПЗ — для впевненості у надійності кожного вузла та оптимізації витрат матеріалів.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">03</div>
+          <h3>Будівництво та реалізація</h3>
+          <p>Ми не просто малюємо плани — ми знаємо, як втілити їх у життя. Наш підхід гарантує, що об'єкт буде збудований саме так, як закладено в проекті.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">04</div>
+          <h3>Генеральний підряд</h3>
+          <p>Беремо на себе роль генпідрядника та звільняємо замовника від координації десятків процесів. Мета — здати об'єкт «під ключ» у строк, у межах бюджету.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">05</div>
+          <h3>Комплектація меблями</h3>
+          <p>Підбір за специфікаціями, індивідуальні рішення, інтеграція з інженерними мережами, логістика та монтаж — простір, повністю готовий до експлуатації.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">06</div>
+          <h3>Оздоблення та ремонт</h3>
+          <p>Повний спектр оздоблювальних робіт: від штукатурки та стяжки до гіпсокартону, декору й фарбування. Єдина гарантія на весь цикл робіт.</p>
+        </article>
+      </div>
     </div>
   </section>
+
+  <!-- ===== ПЕРЕВАГИ ===== -->
+  <section class="section advantages" id="advantages">
+    <div class="container">
+      <div class="section-eyebrow">Чому обирають нас</div>
+      <h2 class="section-title">Переваги формату «All-in-one»</h2>
+
+      <div class="adv-grid">
+        <div class="adv-item">
+          <div class="adv-num">15–20%</div>
+          <h4>Економія бюджету</h4>
+          <p>Комплексне замовлення оптимізує логістику й матеріали та виключає дороговартісні переробки.</p>
+        </div>
+        <div class="adv-item">
+          <h4>Єдина точка відповідальності</h4>
+          <p>Не потрібно шукати винних між архітектором, будівельником і дизайнером — ми відповідаємо за кожне рішення на об'єкті.</p>
+        </div>
+        <div class="adv-item">
+          <h4>Відсутність помилок стикування</h4>
+          <p>Ми самі робимо розрахунки й оздоблення та точно знаємо, де проходить кожна труба чи кабель.</p>
+        </div>
+        <div class="adv-item">
+          <h4>Чіткий графік</h4>
+          <p>Усі етапи синхронізовані: оздоблення стартує одразу після інженерних мереж, меблі приїжджають вчасно.</p>
+        </div>
+        <div class="adv-item">
+          <h4>Фіксована ціна</h4>
+          <p>Прораховуємо кошторис на старті — ви знаєте фінальну вартість ще до початку першого етапу робіт.</p>
+        </div>
+        <div class="adv-item">
+          <h4>Кваліфікована команда</h4>
+          <p>Лише сертифіковані інженери, архітектори та вузькопрофільні фахівці з багаторічним досвідом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПОРТФОЛІО ===== -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-eyebrow">Портфоліо</div>
+      <h2 class="section-title">Наші роботи</h2>
+      <p class="section-intro">За десять років роботи ми реалізували близько півтори тисячі об'єктів — промислові та комерційні будівлі, офіси, магазини, житлові комплекси та приватні будинки.</p>
+
+      <div class="portfolio-grid">
+        <a href="#" class="proj"><span>Агрохолдинг «Нібулон»</span></a>
+        <a href="#" class="proj"><span>Global Logic</span></a>
+        <a href="#" class="proj"><span>Vodafone</span></a>
+        <a href="#" class="proj"><span>DEC Place</span></a>
+        <a href="#" class="proj"><span>Магазин «Сільпо»</span></a>
+        <a href="#" class="proj"><span>Магазин «BROCARD»</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПРО НАС ===== -->
+  <section class="section about" id="about">
+    <div class="container about-inner">
+      <div>
+        <div class="section-eyebrow">Наша історія</div>
+        <h2 class="section-title">Про нас</h2>
+        <p>Наша головна мета — зробити будь-який будівельний процес приємним, безтурботним та з якісним результатом. Заробити довіру клієнтів і партнерів та статус надійного забудовника «НК БУД» вдалося завдяки високій якості робіт, суворому дотриманню термінів та використанню безпечних матеріалів.</p>
+        <p>Ми пояснюємо складні технічні рішення простою мовою, щоб ви розуміли кожен етап інвестицій. Ваша ідея — наша технічна реалізація.</p>
+      </div>
+      <div class="about-stats">
+        <div><strong>10+</strong><span>років на ринку</span></div>
+        <div><strong>1500+</strong><span>об'єктів</span></div>
+        <div><strong>350+</strong><span>клієнтів</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== КОНТАКТИ ===== -->
+  <section class="section contacts" id="contacts">
+    <div class="container contacts-inner">
+      <div class="contacts-info">
+        <div class="section-eyebrow">Зв'язок з нами</div>
+        <h2 class="section-title">Обговоримо проект?</h2>
+        <p>Залиште контактні дані — ми зв'яжемося для уточнення деталей вашого проекту.</p>
+        <ul class="contacts-list">
+          <li><span>Телефон</span><a href="tel:0444990780">044-499-0780</a></li>
+          <li><span>Email</span><a href="mailto:info@nkbud.com.ua">info@nkbud.com.ua</a></li>
+          <li><span>Адреса</span>м. Київ, вул. Здолбунівська, 7Д</li>
+          <li><span>Графік</span>з 9:00 до 18:00</li>
+        </ul>
+      </div>
+
+      <form class="contacts-form" onsubmit="return false">
+        <label>Ім'я<input type="text" name="name" required></label>
+        <label>Телефон<input type="tel" name="phone" required></label>
+        <label>Email<input type="email" name="email"></label>
+        <label>Коментар<textarea name="comment" rows="3"></textarea></label>
+        <button type="submit" class="btn btn-solid">Надіслати заявку</button>
+        <p class="form-note">Натискаючи кнопку, ви даєте згоду на обробку персональних даних.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== ФУТЕР ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">НК БУД</span>
+        <p>© 2026 НК БУД. Усі права захищені.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#services">Послуги</a>
+        <a href="#portfolio">Портфоліо</a>
+        <a href="#about">Про компанію</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/nk.bud1/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/nkbud" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

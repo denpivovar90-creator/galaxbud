@@ -157,3 +157,100 @@ body{
   .header-right{gap:16px}
   .phone{font-size:17px}
 }
+
+/* ===== SECTIONS (загальне) ===== */
+body{background:#15181c}
+.section{padding:110px 0;background:#15181c}
+.section:nth-of-type(odd){background:#1a1e23}
+.container{max-width:1280px;margin:0 auto;padding:0 48px}
+.section-eyebrow{
+  font-family:'Oswald';text-transform:uppercase;letter-spacing:3px;
+  font-size:13px;color:var(--accent);font-weight:600;margin-bottom:14px;
+}
+.section-title{
+  font-family:'Oswald';font-weight:700;text-transform:uppercase;
+  font-size:clamp(28px,3.6vw,46px);line-height:1.05;letter-spacing:.5px;margin-bottom:24px;
+}
+.section-intro{max-width:760px;color:var(--muted);font-size:17px;line-height:1.6;margin-bottom:54px}
+
+/* ===== CARDS / ПОСЛУГИ ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.card{
+  background:#15181c;padding:42px 34px;transition:background .25s;
+}
+.section:nth-of-type(odd) .card{background:#1a1e23}
+.card:hover{background:#22262c}
+.card-num{font-family:'Oswald';font-size:28px;color:var(--accent);font-weight:600;margin-bottom:18px}
+.card h3{font-family:'Oswald';font-size:21px;font-weight:600;margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.card p{color:var(--muted);font-size:15px;line-height:1.6}
+
+/* ===== ПЕРЕВАГИ ===== */
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.adv-item{border-left:2px solid var(--accent);padding:6px 0 6px 24px}
+.adv-num{font-family:'Oswald';font-size:34px;font-weight:700;color:#fff;margin-bottom:8px}
+.adv-item h4{font-family:'Oswald';font-size:19px;font-weight:600;margin-bottom:10px;letter-spacing:.3px}
+.adv-item p{color:var(--muted);font-size:15px;line-height:1.55}
+
+/* ===== ПОРТФОЛІО ===== */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{
+  position:relative;display:flex;align-items:flex-end;
+  min-height:230px;padding:28px;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,#2a2f36,#1a1e23);
+  border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:transform .25s,border-color .25s;
+}
+.proj::after{content:"→";position:absolute;top:24px;right:26px;color:var(--accent);font-size:22px;opacity:0;transition:opacity .25s}
+.proj:hover{transform:translateY(-4px);border-color:var(--accent)}
+.proj:hover::after{opacity:1}
+.proj span{font-family:'Oswald';font-size:20px;font-weight:600;letter-spacing:.3px}
+
+/* ===== ПРО НАС ===== */
+.about-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center}
+.about p{color:var(--muted);font-size:17px;line-height:1.7;margin-bottom:18px}
+.about-stats{display:flex;flex-direction:column;gap:28px}
+.about-stats div{border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+.about-stats strong{font-family:'Oswald';font-size:46px;font-weight:700;display:block;line-height:1}
+.about-stats span{color:var(--muted);font-size:15px}
+
+/* ===== КОНТАКТИ ===== */
+.contacts-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contacts-list{list-style:none;margin-top:34px;display:flex;flex-direction:column;gap:20px}
+.contacts-list li{display:flex;flex-direction:column;gap:4px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:16px}
+.contacts-list span{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-family:'Oswald'}
+.contacts-list a{color:#fff;text-decoration:none;font-size:19px}
+.contacts-list li{color:#fff;font-size:19px}
+.contacts-form{display:flex;flex-direction:column;gap:16px;background:#15181c;padding:38px;border:1px solid rgba(255,255,255,.08)}
+.section:nth-of-type(odd) .contacts-form{background:#1a1e23}
+.contacts-form label{display:flex;flex-direction:column;gap:7px;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-family:'Oswald'}
+.contacts-form input,.contacts-form textarea{
+  background:transparent;border:1px solid rgba(255,255,255,.18);color:#fff;
+  padding:13px 14px;font-family:'Inter';font-size:15px;outline:none;transition:border-color .2s;
+}
+.contacts-form input:focus,.contacts-form textarea:focus{border-color:var(--accent)}
+.btn-solid{background:var(--accent);border-color:var(--accent);margin-top:6px;cursor:pointer;text-align:center}
+.btn-solid:hover{background:#fff;color:#15181c;border-color:#fff}
+.form-note{font-size:12px;color:var(--muted);line-height:1.5;text-transform:none;letter-spacing:0}
+
+/* ===== ФУТЕР ===== */
+.site-footer{background:#0f1215;padding:48px 0;border-top:1px solid rgba(255,255,255,.07)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.footer-brand .logo-mark{font-family:'Oswald';font-weight:700;font-size:22px}
+.footer-brand p{color:var(--muted);font-size:13px;margin-top:6px}
+.footer-nav{display:flex;gap:28px}
+.footer-nav a,.footer-social a{color:var(--muted);text-decoration:none;font-size:15px;transition:color .2s}
+.footer-nav a:hover,.footer-social a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:20px}
+
+/* ===== RESPONSIVE (секції) ===== */
+@media(max-width:980px){
+  .cards,.adv-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .about-inner,.contacts-inner{grid-template-columns:1fr;gap:40px}
+  .about-stats{flex-direction:row;flex-wrap:wrap}
+  .about-stats div{flex:1;min-width:120px}
+}
+@media(max-width:600px){
+  .section{padding:70px 0}
+  .container{padding:0 22px}
+  .cards,.adv-grid,.portfolio-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:20px}
+}
