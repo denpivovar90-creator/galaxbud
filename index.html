@@ -7,12 +7,12 @@
   <meta name="description" content="Galaks Plus — будівництво, реконструкція та ремонт об'єктів будь-якої складності. Генеральний підряд під ключ у Києві.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ===== HERO / ПЕРШИЙ ЕКРАН ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="top">
     <img class="hero-bg" src="hero.jpg" alt="Будівельний майданчик Galaks Plus">
     <div class="hero-overlay"></div>
@@ -22,14 +22,12 @@
         <span class="logo-mark">GALAKS<span class="logo-plus">+</span></span>
         <span class="logo-sub">Будівельна компанія</span>
       </a>
-
       <nav class="nav">
         <a href="#about">Про компанію</a>
         <a href="#services">Послуги</a>
         <a href="#portfolio">Портфоліо</a>
         <a href="#contacts">Контакти</a>
       </nav>
-
       <div class="header-right">
         <a href="#" class="lang">UK ▾</a>
         <a href="tel:0444990780" class="phone">
@@ -39,66 +37,87 @@
     </header>
 
     <div class="hero-body">
-      <div class="hero-inner">
+      <div class="hero-inner reveal">
         <div class="hero-tag">Генеральний підряд · від проєкту до здачі під ключ</div>
         <h1>Зводимо складні об'єкти<br>точно, надійно та&nbsp;в&nbsp;строк</h1>
         <p class="hero-lead">Повний цикл інженерії: проектування, будівництво, реконструкція та ремонт об'єктів будь-якої складності.</p>
         <div class="hero-actions">
-          <a href="#contacts" class="btn btn-solid">Розрахунок вашого проекта</a>
+          <a href="#contacts" class="btn btn-solid"><span>Розрахунок вашого проекта</span></a>
         </div>
       </div>
 
-      <div class="hero-metrics">
-        <div><strong>10+</strong><span>років на ринку</span></div>
-        <div><strong>1500+</strong><span>збудованих об'єктів</span></div>
-        <div><strong>350+</strong><span>задоволених клієнтів</span></div>
+      <div class="hero-metrics reveal">
+        <div><strong data-count="10">0</strong><em>+</em><span>років на ринку</span></div>
+        <div><strong data-count="1500">0</strong><em>+</em><span>збудованих об'єктів</span></div>
+        <div><strong data-count="350">0</strong><em>+</em><span>задоволених клієнтів</span></div>
       </div>
     </div>
-
-    <a href="#services" class="scroll-down">
-      <span class="scroll-word">ВНИЗ</span>
-      <span class="scroll-arrow">⌄</span>
-    </a>
   </section>
 
-  <!-- ===== ПОСЛУГИ ===== -->
+  <!-- ===== ПОСЛУГИ (галерея) ===== -->
   <section class="section services" id="services">
     <div class="container">
-      <div class="section-eyebrow">Наші послуги</div>
-      <h2 class="section-title">Що ми робимо</h2>
-      <p class="section-intro">Ми перетворюємо складні технічні завдання на надійні та готові до експлуатації рішення. Наша команда об'єднує багаторічний досвід проектування із сучасними методами розрахунків, забезпечуючи точність на кожному етапі.</p>
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Наші послуги</div>
+        <h2 class="section-title">Що ми робимо</h2>
+        <p class="section-intro">Ми перетворюємо складні технічні завдання на надійні та готові до експлуатації рішення. Кожен напрямок — окрема компетенція з власною командою.</p>
+      </div>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-num">01</div>
-          <h3>Проектування та креслення</h3>
-          <p>Розробляємо повний пакет технічної документації. Наші креслення відповідають державним стандартам і вимогам безпеки, що дозволяє уникнути помилок під час будівництва.</p>
-        </article>
-        <article class="card">
-          <div class="card-num">02</div>
-          <h3>Складні інженерні розрахунки</h3>
-          <p>Проводимо перевірку конструкцій на міцність, стабільність та ефективність із сучасним ПЗ — для впевненості у надійності кожного вузла та оптимізації витрат матеріалів.</p>
-        </article>
-        <article class="card">
-          <div class="card-num">03</div>
-          <h3>Будівництво та реалізація</h3>
-          <p>Ми не просто малюємо плани — ми знаємо, як втілити їх у життя. Наш підхід гарантує, що об'єкт буде збудований саме так, як закладено в проекті.</p>
-        </article>
-        <article class="card">
-          <div class="card-num">04</div>
-          <h3>Генеральний підряд</h3>
-          <p>Беремо на себе роль генпідрядника та звільняємо замовника від координації десятків процесів. Мета — здати об'єкт «під ключ» у строк, у межах бюджету.</p>
-        </article>
-        <article class="card">
-          <div class="card-num">05</div>
-          <h3>Комплектація меблями</h3>
-          <p>Підбір за специфікаціями, індивідуальні рішення, інтеграція з інженерними мережами, логістика та монтаж — простір, повністю готовий до експлуатації.</p>
-        </article>
-        <article class="card">
-          <div class="card-num">06</div>
-          <h3>Оздоблення та ремонт</h3>
-          <p>Повний спектр оздоблювальних робіт: від штукатурки та стяжки до гіпсокартону, декору й фарбування. Єдина гарантія на весь цикл робіт.</p>
-        </article>
+      <div class="gallery">
+        <a href="#" class="gcard reveal" style="--i:0">
+          <div class="gcard-img" style="background-image:url('service-01.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">01</span>
+            <h3>Проектування<br>та креслення</h3>
+            <span class="gcard-arrow">→</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal" style="--i:1">
+          <div class="gcard-img" style="background-image:url('service-02.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">02</span>
+            <h3>Інженерні<br>розрахунки</h3>
+            <span class="gcard-arrow">→</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal" style="--i:2">
+          <div class="gcard-img" style="background-image:url('service-03.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">03</span>
+            <h3>Будівництво<br>та реалізація</h3>
+            <span class="gcard-arrow">→</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal" style="--i:3">
+          <div class="gcard-img" style="background-image:url('service-04.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">04</span>
+            <h3>Генеральний<br>підряд</h3>
+            <span class="gcard-arrow">→</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal" style="--i:4">
+          <div class="gcard-img" style="background-image:url('service-05.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">05</span>
+            <h3>Комплектація<br>меблями</h3>
+            <span class="gcard-arrow">→</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal" style="--i:5">
+          <div class="gcard-img" style="background-image:url('service-06.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">06</span>
+            <h3>Оздоблення<br>та ремонт</h3>
+            <span class="gcard-arrow">→</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -106,32 +125,33 @@
   <!-- ===== ПЕРЕВАГИ ===== -->
   <section class="section advantages" id="advantages">
     <div class="container">
-      <div class="section-eyebrow">Чому обирають нас</div>
-      <h2 class="section-title">Переваги формату «All-in-one»</h2>
-
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Чому обирають нас</div>
+        <h2 class="section-title">Переваги формату «All-in-one»</h2>
+      </div>
       <div class="adv-grid">
-        <div class="adv-item">
+        <div class="adv-item reveal" style="--i:0">
           <div class="adv-num">15–20%</div>
           <h4>Економія бюджету</h4>
           <p>Комплексне замовлення оптимізує логістику й матеріали та виключає дороговартісні переробки.</p>
         </div>
-        <div class="adv-item">
+        <div class="adv-item reveal" style="--i:1">
           <h4>Єдина точка відповідальності</h4>
           <p>Не потрібно шукати винних між архітектором, будівельником і дизайнером — ми відповідаємо за кожне рішення на об'єкті.</p>
         </div>
-        <div class="adv-item">
+        <div class="adv-item reveal" style="--i:2">
           <h4>Відсутність помилок стикування</h4>
           <p>Ми самі робимо розрахунки й оздоблення та точно знаємо, де проходить кожна труба чи кабель.</p>
         </div>
-        <div class="adv-item">
+        <div class="adv-item reveal" style="--i:3">
           <h4>Чіткий графік</h4>
           <p>Усі етапи синхронізовані: оздоблення стартує одразу після інженерних мереж, меблі приїжджають вчасно.</p>
         </div>
-        <div class="adv-item">
+        <div class="adv-item reveal" style="--i:4">
           <h4>Фіксована ціна</h4>
           <p>Прораховуємо кошторис на старті — ви знаєте фінальну вартість ще до початку першого етапу робіт.</p>
         </div>
-        <div class="adv-item">
+        <div class="adv-item reveal" style="--i:5">
           <h4>Кваліфікована команда</h4>
           <p>Лише сертифіковані інженери, архітектори та вузькопрофільні фахівці з багаторічним досвідом.</p>
         </div>
@@ -142,17 +162,18 @@
   <!-- ===== ПОРТФОЛІО ===== -->
   <section class="section portfolio" id="portfolio">
     <div class="container">
-      <div class="section-eyebrow">Портфоліо</div>
-      <h2 class="section-title">Наші роботи</h2>
-      <p class="section-intro">За десять років роботи ми реалізували близько півтори тисячі об'єктів — промислові та комерційні будівлі, офіси, магазини, житлові комплекси та приватні будинки.</p>
-
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Портфоліо</div>
+        <h2 class="section-title">Наші роботи</h2>
+        <p class="section-intro">За десять років ми реалізували близько півтори тисячі об'єктів — промислові та комерційні будівлі, офіси, магазини, житлові комплекси та приватні будинки.</p>
+      </div>
       <div class="portfolio-grid">
-        <a href="#" class="proj"><span>Агрохолдинг «Нібулон»</span></a>
-        <a href="#" class="proj"><span>Global Logic</span></a>
-        <a href="#" class="proj"><span>Vodafone</span></a>
-        <a href="#" class="proj"><span>DEC Place</span></a>
-        <a href="#" class="proj"><span>Магазин «Сільпо»</span></a>
-        <a href="#" class="proj"><span>Магазин «BROCARD»</span></a>
+        <a href="#" class="proj reveal" style="--i:0"><span>Агрохолдинг «Нібулон»</span></a>
+        <a href="#" class="proj reveal" style="--i:1"><span>Global Logic</span></a>
+        <a href="#" class="proj reveal" style="--i:2"><span>Vodafone</span></a>
+        <a href="#" class="proj reveal" style="--i:3"><span>DEC Place</span></a>
+        <a href="#" class="proj reveal" style="--i:4"><span>Магазин «Сільпо»</span></a>
+        <a href="#" class="proj reveal" style="--i:5"><span>Магазин «BROCARD»</span></a>
       </div>
     </div>
   </section>
@@ -160,42 +181,73 @@
   <!-- ===== ПРО НАС ===== -->
   <section class="section about" id="about">
     <div class="container about-inner">
-      <div>
-        <div class="section-eyebrow">Наша історія</div>
-        <h2 class="section-title">Про нас</h2>
-        <p>Наша головна мета — зробити будь-який будівельний процес приємним, безтурботним та з якісним результатом. Заробити довіру клієнтів і партнерів та статус надійного забудовника Galaks Plus вдалося завдяки високій якості робіт, суворому дотриманню термінів та використанню безпечних матеріалів.</p>
-        <p>Ми пояснюємо складні технічні рішення простою мовою, щоб ви розуміли кожен етап інвестицій. Ваша ідея — наша технічна реалізація.</p>
+      <div class="reveal">
+        <div class="section-eyebrow">Хто ми</div>
+        <h2 class="section-title">Galaks Plus —<br>будуємо&nbsp;з 2014 року</h2>
+        <p>Galaks Plus об'єднує інженерів, архітекторів та будівельників, які вже понад десять років формують у Києві стандарт «під ключ»: від першого ескізу до повної комплектації простору. Ми працюємо з житлом, офісами, торговими майданчиками й промисловими об'єктами — і скрізь керуємось одним принципом: складні рішення мають бути зрозумілими замовнику.</p>
+        <p>Кожен проект веде окремий менеджер, а технічний нагляд здійснюють фахівці, які раніше самі проектували й закладали ці комунікації. Тому ми бачимо ризики до їх появи й гарантуємо результат, який збігається з проектом до останнього міліметра.</p>
       </div>
-      <div class="about-stats">
-        <div><strong>10+</strong><span>років на ринку</span></div>
-        <div><strong>1500+</strong><span>об'єктів</span></div>
-        <div><strong>350+</strong><span>клієнтів</span></div>
+      <div class="about-stats reveal">
+        <div><strong>10+</strong><span>років досвіду</span></div>
+        <div><strong>1500+</strong><span>зданих об'єктів</span></div>
+        <div><strong>350+</strong><span>постійних клієнтів</span></div>
       </div>
     </div>
   </section>
 
   <!-- ===== КОНТАКТИ ===== -->
   <section class="section contacts" id="contacts">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
     <div class="container contacts-inner">
-      <div class="contacts-info">
+      <div class="contacts-info reveal">
         <div class="section-eyebrow">Зв'язок з нами</div>
-        <h2 class="section-title">Обговоримо проект?</h2>
-        <p>Залиште контактні дані — ми зв'яжемося для уточнення деталей вашого проекту.</p>
+        <h2 class="section-title">Обговоримо<br>ваш проект?</h2>
+        <p>Залиште контактні дані — ми зв'яжемося протягом робочого дня для уточнення деталей.</p>
         <ul class="contacts-list">
-          <li><span>Телефон</span><a href="tel:0444990780">044-499-0780</a></li>
-          <li><span>Email</span><a href="mailto:info@galaksplus.com.ua">info@galaksplus.com.ua</a></li>
-          <li><span>Адреса</span>м. Київ, вул. Здолбунівська, 7Д</li>
-          <li><span>Графік</span>з 9:00 до 18:00</li>
+          <li>
+            <span class="ci-label">Телефон</span>
+            <a href="tel:0444990780">044-499-0780</a>
+          </li>
+          <li>
+            <span class="ci-label">Email</span>
+            <a href="mailto:info@galaksplus.com.ua">info@galaksplus.com.ua</a>
+          </li>
+          <li>
+            <span class="ci-label">Адреса</span>
+            <span>м. Київ, вул. Здолбунівська, 7Д</span>
+          </li>
+          <li>
+            <span class="ci-label">Графік</span>
+            <span>з 9:00 до 18:00</span>
+          </li>
         </ul>
       </div>
 
-      <form class="contacts-form" onsubmit="return false">
-        <label>Ім'я<input type="text" name="name" required></label>
-        <label>Телефон<input type="tel" name="phone" required></label>
-        <label>Email<input type="email" name="email"></label>
-        <label>Коментар<textarea name="comment" rows="3"></textarea></label>
-        <button type="submit" class="btn btn-solid">Надіслати заявку</button>
-        <p class="form-note">Натискаючи кнопку, ви даєте згоду на обробку персональних даних.</p>
+      <form class="contacts-form reveal" onsubmit="return false">
+        <div class="form-glow"></div>
+        <div class="form-inner">
+          <h3 class="form-title">Заповніть форму</h3>
+          <p class="form-sub">Менеджер передзвонить найближчим часом</p>
+          <label>
+            <input type="text" name="name" required placeholder=" ">
+            <span class="lbl">Ваше ім'я</span>
+          </label>
+          <label>
+            <input type="tel" name="phone" required placeholder=" ">
+            <span class="lbl">Телефон</span>
+          </label>
+          <label>
+            <input type="email" name="email" placeholder=" ">
+            <span class="lbl">Email (необов'язково)</span>
+          </label>
+          <label>
+            <textarea name="comment" rows="3" placeholder=" "></textarea>
+            <span class="lbl">Коментар</span>
+          </label>
+          <button type="submit" class="btn btn-solid btn-full"><span>Надіслати заявку</span></button>
+          <p class="form-note">Натискаючи кнопку, ви даєте згоду на обробку персональних даних.</p>
+        </div>
       </form>
     </div>
   </section>
@@ -220,5 +272,6 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
