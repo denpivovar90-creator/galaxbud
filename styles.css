@@ -287,3 +287,117 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);overf
   .footer-inner{flex-direction:column;align-items:flex-start;gap:20px}
   .form-inner{padding:32px 24px}
 }
+
+/* ================= ЛОГОТИП ================= */
+.logo-img{height:74px;width:auto;display:block;transition:opacity .25s var(--ease),transform .35s var(--ease)}
+.logo:hover .logo-img{opacity:.85;transform:scale(1.03)}
+.logo-img-footer{height:60px}
+
+/* ================= БЛОК "ВЕДУТЬСЯ ТЕХНІЧНІ РОБОТИ" ================= */
+.works-notice{
+  position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:22px;padding:70px 40px;border:1px solid var(--line);border-radius:4px;
+  background:linear-gradient(135deg,rgba(22,33,61,.6),rgba(15,24,48,.6));
+  overflow:hidden;
+}
+.works-notice::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(80% 60% at 50% 0%, rgba(59,130,246,.16) 0%, transparent 65%);
+  pointer-events:none;
+}
+.works-icon{color:var(--accent-soft);width:56px;height:56px;position:relative;z-index:2}
+.works-icon svg{width:100%;height:100%;animation:pulseSoft 2.6s ease-in-out infinite}
+@keyframes pulseSoft{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.works-text{
+  position:relative;z-index:2;max-width:620px;
+  font-family:'Oswald','Inter',system-ui,sans-serif;font-weight:500;
+  font-size:clamp(18px,1.8vw,24px);line-height:1.5;color:#fff;letter-spacing:.3px;
+}
+.btn-outline{
+  position:relative;z-index:2;background:transparent;color:#fff;border-color:rgba(148,163,184,.5);
+}
+.btn-outline:hover{color:var(--accent);border-color:#fff}
+
+/* ================= CTA у картках галереї ================= */
+.gcard-cta{
+  display:inline-block;margin-top:8px;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--accent-soft);font-weight:600;opacity:0;transform:translateY(6px);
+  transition:opacity .35s var(--ease),transform .35s var(--ease);
+}
+.gcard:hover .gcard-cta{opacity:1;transform:translateY(0)}
+.gcard{cursor:pointer}
+
+/* ================= МОДАЛЬНЕ ВІКНО ================= */
+.modal{
+  position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+  padding:24px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s;
+}
+.modal.is-open{opacity:1;visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(4,8,16,.78);backdrop-filter:blur(6px)}
+.modal-window{
+  position:relative;width:100%;max-width:520px;max-height:92vh;overflow-y:auto;
+  transform:translateY(28px) scale(.97);transition:transform .45s var(--ease);
+}
+.modal.is-open .modal-window{transform:translateY(0) scale(1)}
+.modal-glow{
+  position:absolute;inset:-2px;border-radius:6px;z-index:0;
+  background:linear-gradient(135deg,var(--accent) 0%,#8b5cf6 50%,var(--accent) 100%);
+  background-size:200% 200%;animation:gradShift 8s ease infinite;opacity:.75;filter:blur(16px);
+}
+.modal-inner{
+  position:relative;z-index:1;background:rgba(11,18,32,.97);backdrop-filter:blur(20px);
+  border:1px solid var(--line);border-radius:4px;padding:44px 40px 38px;
+}
+.modal-close{
+  position:absolute;top:14px;right:16px;width:40px;height:40px;border:none;cursor:pointer;
+  background:transparent;color:var(--muted);font-size:30px;line-height:1;
+  transition:color .25s var(--ease),transform .25s var(--ease);
+}
+.modal-close:hover{color:#fff;transform:rotate(90deg)}
+.modal-eyebrow{
+  font-family:'Oswald','Inter',sans-serif;text-transform:uppercase;letter-spacing:2.5px;
+  font-size:12px;color:var(--accent-soft);font-weight:600;margin-bottom:12px;
+}
+.modal-title{
+  font-family:'Oswald','Inter',system-ui,sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:clamp(24px,3vw,32px);line-height:1.1;letter-spacing:.5px;margin-bottom:12px;
+}
+.modal-sub{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:26px}
+.modal-form{display:flex;flex-direction:column;gap:18px}
+.modal-form label{position:relative;display:block}
+.modal-form input,.modal-form textarea{
+  width:100%;background:transparent;border:1px solid var(--line);color:#fff;
+  padding:18px 16px 14px;font-family:'Inter',sans-serif;font-size:15px;outline:none;resize:vertical;
+  transition:border-color .25s var(--ease),box-shadow .25s var(--ease);
+}
+.modal-form input:focus,.modal-form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.18)}
+.modal-form .lbl{
+  position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted);
+  font-size:14px;pointer-events:none;transition:.25s var(--ease);padding:0 4px;
+}
+.modal-form textarea ~ .lbl{top:22px;transform:none}
+.modal-form input:focus ~ .lbl,
+.modal-form input:not(:placeholder-shown) ~ .lbl,
+.modal-form textarea:focus ~ .lbl,
+.modal-form textarea:not(:placeholder-shown) ~ .lbl{
+  top:0;transform:translateY(-50%);font-size:11px;color:var(--accent-soft);
+  background:#0b1220;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;
+}
+
+/* стан "успішно надіслано" */
+.modal-success{display:none;text-align:center;padding:20px 0 10px}
+.modal-success.is-visible{display:block;animation:fadeUp .5s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.success-icon{width:64px;height:64px;margin:0 auto 20px;color:#22c55e}
+.success-icon svg{width:100%;height:100%}
+.modal-success h4{font-family:'Oswald','Inter',sans-serif;font-size:24px;text-transform:uppercase;margin-bottom:10px;letter-spacing:.5px}
+.modal-success p{color:var(--muted);font-size:15px;line-height:1.6}
+
+/* блокування скролу коли модалка відкрита */
+body.modal-open{overflow:hidden}
+
+@media(max-width:640px){
+  .logo-img{height:54px}
+  .modal-inner{padding:36px 22px 30px}
+  .works-notice{padding:48px 22px}
+}
