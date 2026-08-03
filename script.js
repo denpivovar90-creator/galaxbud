@@ -210,3 +210,46 @@ if (mainForm) {
     setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 3500);
   });
 }
+
+// ====== ФІКСОВАНА ШАПКА: фон після прокрутки ======
+const siteHeader = document.getElementById('siteHeader');
+if (siteHeader) {
+  const toggleHeader = () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 60);
+  };
+  toggleHeader();
+  window.addEventListener('scroll', toggleHeader, { passive: true });
+}
+
+// ====== БУРГЕР-МЕНЮ ======
+const burger = document.getElementById('burger');
+const mainNav = document.getElementById('mainNav');
+
+if (burger && mainNav) {
+  // затемнення позаду меню
+  const navBackdrop = document.createElement('div');
+  navBackdrop.className = 'nav-backdrop';
+  document.body.appendChild(navBackdrop);
+
+  const setNav = (open) => {
+    mainNav.classList.toggle('is-open', open);
+    navBackdrop.classList.toggle('is-visible', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('modal-open', open);
+  };
+
+  burger.addEventListener('click', () => {
+    setNav(!mainNav.classList.contains('is-open'));
+  });
+
+  navBackdrop.addEventListener('click', () => setNav(false));
+
+  // закривати меню після переходу за посиланням
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setNav(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setNav(false);
+  });
+}

@@ -32,7 +32,24 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);overf
 .hero > *:not(.hero-bg):not(.hero-overlay){position:relative;z-index:2}
 
 /* ================= HEADER ================= */
-.site-header{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:26px 56px}
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
+  padding:18px 56px;
+  transition:background .4s var(--ease), padding .4s var(--ease),
+             box-shadow .4s var(--ease), border-color .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+/* стан після прокрутки */
+.site-header.scrolled{
+  background:rgba(9,14,26,.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:10px 56px;
+  border-bottom-color:var(--line);
+  box-shadow:0 10px 30px -18px rgba(0,0,0,.9);
+}
+.site-header.scrolled .logo-img{height:54px}
 .logo{display:flex;flex-direction:column;text-decoration:none;color:#fff;line-height:1}
 .logo-mark{font-family:'Oswald', 'Inter', system-ui, -apple-system, sans-serif;font-weight:700;font-size:24px;letter-spacing:1px}
 .logo-plus{color:var(--accent-soft)}
@@ -61,7 +78,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);overf
 .phone-ico{color:var(--accent-soft);font-size:17px}
 
 /* ================= HERO BODY ================= */
-.hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 56px 0}
+.hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:130px 56px 0}
 .hero-inner{max-width:880px}
 .hero-tag{
   display:inline-block;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;
@@ -400,4 +417,52 @@ body.modal-open{overflow:hidden}
   .logo-img{height:54px}
   .modal-inner{padding:36px 22px 30px}
   .works-notice{padding:48px 22px}
+}
+
+/* ================= БУРГЕР-МЕНЮ (мобільне) ================= */
+.burger{
+  display:none;width:44px;height:44px;border:none;background:transparent;cursor:pointer;
+  flex-direction:column;justify-content:center;align-items:flex-end;gap:6px;padding:0;
+}
+.burger span{
+  display:block;height:2px;width:26px;background:#fff;border-radius:2px;
+  transition:transform .35s var(--ease), opacity .25s var(--ease), width .35s var(--ease);
+}
+.burger span:nth-child(2){width:20px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){width:26px;transform:translateY(-8px) rotate(-45deg)}
+
+/* відступ під фіксовану шапку для якірних переходів */
+section[id]{scroll-margin-top:90px}
+
+@media(max-width:1100px){
+  .burger{display:flex}
+  .nav{
+    display:flex;position:fixed;top:0;right:0;
+    width:min(320px,80vw);height:100vh;
+    flex-direction:column;justify-content:center;gap:28px;
+    padding:80px 36px;
+    background:rgba(9,14,26,.97);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border-left:1px solid var(--line);
+    transform:translateX(100%);
+    transition:transform .45s var(--ease);
+    z-index:1002;
+  }
+  .nav.is-open{transform:translateX(0)}
+  .nav a{font-family:'Oswald','Inter',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:.5px}
+  .nav-backdrop{
+    position:fixed;inset:0;background:rgba(4,8,16,.6);z-index:999;
+    opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s;
+  }
+  .nav-backdrop.is-visible{opacity:1;visibility:visible}
+}
+
+@media(max-width:640px){
+  .site-header{padding:12px 20px;flex-wrap:nowrap;gap:12px}
+  .site-header.scrolled{padding:8px 20px}
+  .lang{display:none}
+  .phone{font-size:16px}
+  .hero-body{padding:110px 22px 0}
 }
