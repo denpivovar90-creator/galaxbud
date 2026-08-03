@@ -462,7 +462,22 @@ section[id]{scroll-margin-top:90px}
 @media(max-width:640px){
   .site-header{padding:12px 20px;flex-wrap:nowrap;gap:12px}
   .site-header.scrolled{padding:8px 20px}
-  .lang{display:none}
   .phone{font-size:16px}
   .hero-body{padding:110px 22px 0}
 }
+
+/* ================= ПЕРЕМИКАЧ МОВ ================= */
+.lang-switch{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;letter-spacing:.5px}
+.lang-opt{
+  position:relative;color:var(--muted);text-decoration:none;padding:4px 2px;
+  transition:color .25s var(--ease);
+}
+.lang-opt:hover{color:#fff}
+.lang-opt.is-active{color:#fff}
+.lang-opt.is-active::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent-soft);
+}
+.lang-sep{color:rgba(148,163,184,.4)}
+
+/* пастка для спам-ботів — прихована від людей */
+.hidden-field{position:absolute!important;left:-9999px!important;opacity:0!important;height:0;overflow:hidden}

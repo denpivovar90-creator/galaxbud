@@ -120,6 +120,11 @@ async function sendToTelegram(data) {
     return false;
   }
 
+  const pageLang = (document.documentElement.lang || 'uk').toLowerCase();
+  const langMark = pageLang.startsWith('en')
+    ? '🌐 <b>Мова клієнта:</b> англійська (EN-версія сайту)'
+    : '';
+
   const lines = [
     '🔔 <b>Нова заявка з сайту GalaxPlus</b>',
     '',
@@ -128,6 +133,7 @@ async function sendToTelegram(data) {
     `📞 <b>Телефон:</b> ${escapeHtml(data.phone || '—')}`,
     data.email ? `✉️ <b>Email:</b> ${escapeHtml(data.email)}` : '',
     data.comment ? `💬 <b>Коментар:</b> ${escapeHtml(data.comment)}` : '',
+    langMark,
     '',
     `🕒 ${new Date().toLocaleString('uk-UA')}`
   ].filter(Boolean);
@@ -172,16 +178,68 @@ function collectForm(form) {
   };
 }
 
+// ====== ВІДПРАВКА НА ПОШТУ (Netlify Forms) ======
+// Заявка потрапляє в панель Netlify і звідти пересилається на galaxplus4@gmail.com.
+// Налаштування пошти — див. інструкцію в POSHTA.md
+async function sendToEmail(form, data) {
+  // на локальному файлі (file://) відправляти нікуди — пропускаємо
+  if (location.protocol === 'file:') {
+    console.info('Netlify Forms працює лише на опублікованому сайті.');
+    return false;
+  }
+
+  const pageLang = (document.documentElement.lang || 'uk').toLowerCase();
+  const body = new URLSearchParams({
+    'form-name': form.getAttribute('name') || 'lead',
+    'Послуга': data.service || '—',
+    "Ім'я": data.name || '—',
+    'Телефон': data.phone || '—',
+    'Email': data.email || '—',
+    'Коментар': data.comment || '—',
+    'Мова сторінки': pageLang.startsWith('en') ? 'англійська (EN)' : 'українська (UA)'
+  });
+
+  try {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    });
+    if (!res.ok) console.warn('Netlify Forms: помилка', res.status);
+    return res.ok;
+  } catch (err) {
+    console.error('Помилка відправки на пошту:', err);
+    return false;
+  }
+}
+
+// надсилає заявку одразу в Telegram і на пошту
+async function sendLead(form, data) {
+  const [tg, mail] = await Promise.all([
+    sendToTelegram(data),
+    sendToEmail(form, data)
+  ]);
+  console.info(`Заявка: Telegram ${tg ? '✓' : '✗'}, пошта ${mail ? '✓' : '✗'}`);
+  return tg || mail;
+}
+
+// підписи кнопок відповідно до мови сторінки
+const IS_EN = (document.documentElement.lang || 'uk').toLowerCase().startsWith('en');
+const T = {
+  sending: IS_EN ? 'Sending…' : 'Надсилаємо…',
+  sent:    IS_EN ? '✓ Request sent' : '✓ Заявку надіслано'
+};
+
 // обробник модальної форми
 if (modalForm) {
   modalForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = modalForm.querySelector('button[type="submit"]');
     const original = btn.innerHTML;
-    btn.innerHTML = '<span>Надсилаємо…</span>';
+    btn.innerHTML = `<span>${T.sending}</span>`;
     btn.disabled = true;
 
-    await sendToTelegram(collectForm(modalForm));
+    await sendLead(modalForm, collectForm(modalForm));
 
     btn.innerHTML = original;
     btn.disabled = false;
@@ -198,14 +256,14 @@ if (mainForm) {
     e.preventDefault();
     const btn = mainForm.querySelector('button[type="submit"]');
     const original = btn.innerHTML;
-    btn.innerHTML = '<span>Надсилаємо…</span>';
+    btn.innerHTML = `<span>${T.sending}</span>`;
     btn.disabled = true;
 
     const data = collectForm(mainForm);
-    data.service = 'Форма в розділі «Контакти»';
-    await sendToTelegram(data);
+    if (!data.service) data.service = 'Форма в розділі «Контакти»';
+    await sendLead(mainForm, data);
 
-    btn.innerHTML = '<span>✓ Заявку надіслано</span>';
+    btn.innerHTML = `<span>${T.sent}</span>`;
     mainForm.reset();
     setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 3500);
   });

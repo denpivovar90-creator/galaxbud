@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galaks Plus — Будівельна компанія</title>
-  <meta name="description" content="Galaks Plus — будівництво, реконструкція та ремонт об'єктів будь-якої складності. Генеральний підряд під ключ у Києві.">
+  <title>GalaxPlus — Будівельна компанія</title>
+  <meta name="description" content="GalaxPlus — будівництво, реконструкція та ремонт об'єктів будь-якої складності. Генеральний підряд під ключ у Києві.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- фавікони -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0b1220">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,9 +33,13 @@
     </nav>
 
     <div class="header-right">
-      <a href="#" class="lang">UK ▾</a>
+      <div class="lang-switch">
+        <a href="index.html" class="lang-opt is-active">UK</a>
+        <span class="lang-sep">/</span>
+        <a href="en.html" class="lang-opt">EN</a>
+      </div>
       <a href="tel:+380631671177" class="phone">
-        <span class="phone-ico">✆</span> 063 167 11 77
+        <span class="phone-ico">✆</span> +38 063 167 11 77
       </a>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -38,7 +49,7 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="top">
-    <img class="hero-bg" src="hero.jpg" alt="Будівельний майданчик Galaks Plus">
+    <img class="hero-bg" src="hero.jpg" alt="Будівельний майданчик GalaxPlus">
     <div class="hero-overlay"></div>
 
     <div class="hero-body">
@@ -195,8 +206,8 @@
     <div class="container about-inner">
       <div class="reveal">
         <div class="section-eyebrow">Хто ми</div>
-        <h2 class="section-title">Galaks Plus —<br>будуємо&nbsp;з 2014 року</h2>
-        <p>Galaks Plus об'єднує інженерів, архітекторів та будівельників, які вже понад десять років формують у Києві стандарт «під ключ»: від першого ескізу до повної комплектації простору. Ми працюємо з житлом, офісами, торговими майданчиками й промисловими об'єктами — і скрізь керуємось одним принципом: складні рішення мають бути зрозумілими замовнику.</p>
+        <h2 class="section-title">GalaxPlus —<br>будуємо&nbsp;з 2014 року</h2>
+        <p>GalaxPlus об'єднує інженерів, архітекторів та будівельників, які вже понад десять років формують у Києві стандарт «під ключ»: від першого ескізу до повної комплектації простору. Ми працюємо з житлом, офісами, торговими майданчиками й промисловими об'єктами — і скрізь керуємось одним принципом: складні рішення мають бути зрозумілими замовнику.</p>
         <p>Кожен проект веде окремий менеджер, а технічний нагляд здійснюють фахівці, які раніше самі проектували й закладали ці комунікації. Тому ми бачимо ризики до їх появи й гарантуємо результат, який збігається з проектом до останнього міліметра.</p>
       </div>
       <div class="about-stats reveal">
@@ -219,7 +230,7 @@
         <ul class="contacts-list">
           <li>
             <span class="ci-label">Телефон</span>
-            <a href="tel:+380631671177">063 167 11 77</a>
+            <a href="tel:+380631671177">+38 063 167 11 77</a>
           </li>
           <li>
             <span class="ci-label">Email</span>
@@ -236,7 +247,10 @@
         </ul>
       </div>
 
-      <form class="contacts-form reveal" id="mainForm">
+      <form class="contacts-form reveal" id="mainForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="service" value="Форма в розділі «Контакти»">
+        <p class="hidden-field"><label>Не заповнюйте: <input name="bot-field"></label></p>
         <div class="form-glow"></div>
         <div class="form-inner">
           <h3 class="form-title">Заповніть форму</h3>
@@ -296,7 +310,9 @@
         <h3 class="modal-title" id="modalTitle">Залишити заявку</h3>
         <p class="modal-sub">Менеджер зв'яжеться з вами протягом робочого дня та відповість на всі питання.</p>
 
-        <form class="modal-form" id="leadForm">
+        <form class="modal-form" id="leadForm" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="lead">
+          <p class="hidden-field"><label>Не заповнюйте: <input name="bot-field"></label></p>
           <input type="hidden" name="service" id="fieldService" value="">
           <label>
             <input type="text" name="name" required placeholder=" ">

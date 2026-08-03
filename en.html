@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GalaxPlus — Construction Company</title>
+  <meta name="description" content="GalaxPlus — construction, reconstruction and renovation of facilities of any complexity. Turnkey general contracting in Kyiv.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- фавікони -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0b1220">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== ФІКСОВАНА ШАПКА ===== -->
+  <header class="site-header" id="siteHeader">
+    <a href="#top" class="logo">
+      <img src="logo.png" alt="GalaxPlus — engineering and construction company" class="logo-img">
+    </a>
+
+    <nav class="nav" id="mainNav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="lang-switch">
+        <a href="index.html" class="lang-opt">UK</a>
+        <span class="lang-sep">/</span>
+        <a href="en.html" class="lang-opt is-active">EN</a>
+      </div>
+      <a href="tel:+380631671177" class="phone">
+        <span class="phone-ico">✆</span> +38 063 167 11 77
+      </a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <img class="hero-bg" src="hero.jpg" alt="GalaxPlus construction site">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-body">
+      <div class="hero-inner reveal">
+        <div class="hero-tag">General contracting · from design to turnkey delivery</div>
+        <h1>We build complex facilities<br>precisely, reliably and&nbsp;on&nbsp;time</h1>
+        <p class="hero-lead">Full engineering cycle: design, construction, reconstruction and renovation of facilities of any complexity.</p>
+        <div class="hero-actions">
+          <a href="#contacts" class="btn btn-solid"><span>Get a project estimate</span></a>
+        </div>
+      </div>
+
+      <div class="hero-metrics reveal">
+        <div><strong data-count="10">0</strong><em>+</em><span>years on the market</span></div>
+        <div><strong data-count="1500">0</strong><em>+</em><span>facilities completed</span></div>
+        <div><strong data-count="350">0</strong><em>+</em><span>satisfied clients</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПОСЛУГИ (галерея) ===== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Our services</div>
+        <h2 class="section-title">What we do</h2>
+        <p class="section-intro">We turn complex technical challenges into reliable, ready-to-operate solutions. Each area is a distinct competence with its own team.</p>
+      </div>
+
+      <div class="gallery">
+        <a href="#" class="gcard reveal js-open-modal" data-service="Design & Drawings" style="--i:0">
+          <div class="gcard-img" style="background-image:url('service-01.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">01</span>
+            <h3>Design<br>&amp; drawings</h3>
+            <span class="gcard-arrow">→</span>
+            <span class="gcard-cta">Send a request</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal js-open-modal" data-service="Engineering Calculations" style="--i:1">
+          <div class="gcard-img" style="background-image:url('service-02.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">02</span>
+            <h3>Engineering<br>calculations</h3>
+            <span class="gcard-arrow">→</span>
+            <span class="gcard-cta">Send a request</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal js-open-modal" data-service="Construction & Delivery" style="--i:2">
+          <div class="gcard-img" style="background-image:url('service-03.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">03</span>
+            <h3>Construction<br>&amp; delivery</h3>
+            <span class="gcard-arrow">→</span>
+            <span class="gcard-cta">Send a request</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal js-open-modal" data-service="General Contracting" style="--i:3">
+          <div class="gcard-img" style="background-image:url('service-04.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">04</span>
+            <h3>General<br>contracting</h3>
+            <span class="gcard-arrow">→</span>
+            <span class="gcard-cta">Send a request</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal js-open-modal" data-service="Furniture Fit-Out" style="--i:4">
+          <div class="gcard-img" style="background-image:url('service-05.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">05</span>
+            <h3>Furniture<br>fit-out</h3>
+            <span class="gcard-arrow">→</span>
+            <span class="gcard-cta">Send a request</span>
+          </div>
+        </a>
+        <a href="#" class="gcard reveal js-open-modal" data-service="Finishing & Renovation" style="--i:5">
+          <div class="gcard-img" style="background-image:url('service-06.jpg')"></div>
+          <div class="gcard-overlay"></div>
+          <div class="gcard-body">
+            <span class="gcard-num">06</span>
+            <h3>Finishing<br>&amp; renovation</h3>
+            <span class="gcard-arrow">→</span>
+            <span class="gcard-cta">Send a request</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПЕРЕВАГИ ===== -->
+  <section class="section advantages" id="advantages">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Why clients choose us</div>
+        <h2 class="section-title">Benefits of the all-in-one format</h2>
+      </div>
+      <div class="adv-grid">
+        <div class="adv-item reveal" style="--i:0">
+          <div class="adv-num">15–20%</div>
+          <h4>Budget savings</h4>
+          <p>An all-in-one order optimises logistics and materials and eliminates costly rework.</p>
+        </div>
+        <div class="adv-item reveal" style="--i:1">
+          <h4>Single point of responsibility</h4>
+          <p>No need to work out who is at fault between the architect, builder and designer — we are accountable for every decision on site.</p>
+        </div>
+        <div class="adv-item reveal" style="--i:2">
+          <h4>No coordination errors</h4>
+          <p>We handle both the calculations and the finishing, so we know exactly where every pipe and cable runs.</p>
+        </div>
+        <div class="adv-item reveal" style="--i:3">
+          <h4>A clear schedule</h4>
+          <p>Every stage is synchronised: finishing starts right after the utilities, and furniture arrives on time.</p>
+        </div>
+        <div class="adv-item reveal" style="--i:4">
+          <h4>Fixed price</h4>
+          <p>We prepare the estimate upfront — you know the final cost before the first stage even begins.</p>
+        </div>
+        <div class="adv-item reveal" style="--i:5">
+          <h4>A qualified team</h4>
+          <p>Only certified engineers, architects and specialist tradespeople with many years of experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПОРТФОЛІО ===== -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title">Our work</h2>
+      </div>
+      <div class="works-notice reveal">
+        <div class="works-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="21" stroke="currentColor" stroke-width="2" opacity=".35"/>
+            <path d="M24 13v11l7 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="works-text">Technical work is under way — our projects will be added to the site shortly.</p>
+        <a href="#contacts" class="btn btn-outline js-open-modal" data-service="General enquiry"><span>Get in touch</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПРО НАС ===== -->
+  <section class="section about" id="about">
+    <div class="container about-inner">
+      <div class="reveal">
+        <div class="section-eyebrow">Who we are</div>
+        <h2 class="section-title">GalaxPlus —<br>building&nbsp;since 2014</h2>
+        <p>GalaxPlus brings together engineers, architects and builders who have spent more than a decade setting the turnkey standard in Kyiv: from the first sketch to a fully fitted-out space. We work on housing, offices, retail sites and industrial facilities — and everywhere we follow one principle: complex decisions should be clear to the client.</p>
+        <p>Every project is led by a dedicated manager, and technical supervision is carried out by the specialists who designed and installed those utilities themselves. That is why we spot risks before they arise and deliver a result that matches the design down to the last millimetre.</p>
+      </div>
+      <div class="about-stats reveal">
+        <div><strong>10+</strong><span>years of experience</span></div>
+        <div><strong>1500+</strong><span>facilities delivered</span></div>
+        <div><strong>350+</strong><span>returning clients</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== КОНТАКТИ ===== -->
+  <section class="section contacts" id="contacts">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="container contacts-inner">
+      <div class="contacts-info reveal">
+        <div class="section-eyebrow">Contact us</div>
+        <h2 class="section-title">Let's discuss<br>your project</h2>
+        <p>Leave your contact details and we will get back to you within the working day to discuss the details.</p>
+        <ul class="contacts-list">
+          <li>
+            <span class="ci-label">Phone</span>
+            <a href="tel:+380631671177">+38 063 167 11 77</a>
+          </li>
+          <li>
+            <span class="ci-label">Email</span>
+            <a href="mailto:galaxplus4@gmail.com">galaxplus4@gmail.com</a>
+          </li>
+          <li>
+            <span class="ci-label">Address</span>
+            <span>33-A Yaroslaviv Val St., unit&nbsp;4, Kyiv</span>
+          </li>
+          <li>
+            <span class="ci-label">Working hours</span>
+            <span>9:00 — 18:00</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contacts-form reveal" id="mainForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="service" value="Форма в розділі «Контакти»">
+        <p class="hidden-field"><label>Не заповнюйте: <input name="bot-field"></label></p>
+        <div class="form-glow"></div>
+        <div class="form-inner">
+          <h3 class="form-title">Fill in the form</h3>
+          <p class="form-sub">A manager will call you back shortly</p>
+          <label>
+            <input type="text" name="name" required placeholder=" ">
+            <span class="lbl">Your name</span>
+          </label>
+          <label>
+            <input type="tel" name="phone" required placeholder=" ">
+            <span class="lbl">Phone</span>
+          </label>
+          <label>
+            <input type="email" name="email" placeholder=" ">
+            <span class="lbl">Email (optional)</span>
+          </label>
+          <label>
+            <textarea name="comment" rows="3" placeholder=" "></textarea>
+            <span class="lbl">Message</span>
+          </label>
+          <button type="submit" class="btn btn-solid btn-full"><span>Send request</span></button>
+          <p class="form-note">By clicking the button you consent to the processing of your personal data.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== ФУТЕР ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="GalaxPlus" class="logo-img logo-img-footer">
+        <p>© 2026 GalaxPlus. All rights reserved.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ===== МОДАЛЬНЕ ВІКНО ЗАЯВКИ ===== -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop js-close-modal"></div>
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-glow"></div>
+      <div class="modal-inner">
+        <button class="modal-close js-close-modal" aria-label="Close">&times;</button>
+        <div class="modal-eyebrow" id="modalService">Request</div>
+        <h3 class="modal-title" id="modalTitle">Send a request</h3>
+        <p class="modal-sub">A manager will contact you within the working day and answer all your questions.</p>
+
+        <form class="modal-form" id="leadForm" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="lead">
+          <p class="hidden-field"><label>Не заповнюйте: <input name="bot-field"></label></p>
+          <input type="hidden" name="service" id="fieldService" value="">
+          <label>
+            <input type="text" name="name" required placeholder=" ">
+            <span class="lbl">Your name</span>
+          </label>
+          <label>
+            <input type="tel" name="phone" required placeholder=" ">
+            <span class="lbl">Phone</span>
+          </label>
+          <label>
+            <textarea name="comment" rows="3" placeholder=" "></textarea>
+            <span class="lbl">Message (optional)</span>
+          </label>
+          <button type="submit" class="btn btn-solid btn-full"><span>Send request</span></button>
+          <p class="form-note">By clicking the button you consent to the processing of your personal data.</p>
+        </form>
+
+        <div class="modal-success" id="modalSuccess">
+          <div class="success-icon">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="26" r="24" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M15 27l8 8 15-16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h4>Thank you for your request!</h4>
+          <p>We have received your enquiry and will be in touch shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
