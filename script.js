@@ -50,8 +50,12 @@ if (heroBg) {
 //  НАЛАШТУВАННЯ TELEGRAM
 //  Заповніть ці два рядки — інструкція в файлі TELEGRAM.md
 // ============================================================
-const TELEGRAM_BOT_TOKEN = '';   // напр. '7123456789:AAExxxxxxxxxxxxxxxxxxxxx'
-const TELEGRAM_CHAT_ID   = '';   // напр. '123456789'
+const TELEGRAM_BOT_TOKEN = '8477554349:AAFjViKZWgSTaXeKcXHcU8jD9Q3LOCh0Rps';
+
+// Кому надсилати заявки. Можна додати ще ID через кому.
+// ВАЖЛИВО: кожен отримувач має один раз натиснути Start у діалозі з ботом,
+// інакше Telegram не дозволить боту йому написати.
+const TELEGRAM_CHAT_IDS = ['8784431836', '6719768956'];
 
 // ====== МОДАЛЬНЕ ВІКНО ======
 const modal = document.getElementById('modal');
@@ -101,38 +105,60 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ====== ВІДПРАВКА ЗАЯВОК У TELEGRAM ======
+
+// екранування, щоб символи < > & у тексті не ламали розмітку повідомлення
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 async function sendToTelegram(data) {
-  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-    console.warn('Telegram не налаштовано: заповніть TELEGRAM_BOT_TOKEN і TELEGRAM_CHAT_ID у script.js');
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_IDS.length) {
+    console.warn('Telegram не налаштовано: перевірте TELEGRAM_BOT_TOKEN і TELEGRAM_CHAT_IDS у script.js');
     return false;
   }
+
   const lines = [
     '🔔 <b>Нова заявка з сайту GalaxPlus</b>',
     '',
-    data.service ? `📌 <b>Послуга:</b> ${data.service}` : '',
-    `👤 <b>Ім'я:</b> ${data.name || '—'}`,
-    `📞 <b>Телефон:</b> ${data.phone || '—'}`,
-    data.email ? `✉️ <b>Email:</b> ${data.email}` : '',
-    data.comment ? `💬 <b>Коментар:</b> ${data.comment}` : '',
+    data.service ? `📌 <b>Послуга:</b> ${escapeHtml(data.service)}` : '',
+    `👤 <b>Ім'я:</b> ${escapeHtml(data.name || '—')}`,
+    `📞 <b>Телефон:</b> ${escapeHtml(data.phone || '—')}`,
+    data.email ? `✉️ <b>Email:</b> ${escapeHtml(data.email)}` : '',
+    data.comment ? `💬 <b>Коментар:</b> ${escapeHtml(data.comment)}` : '',
     '',
     `🕒 ${new Date().toLocaleString('uk-UA')}`
   ].filter(Boolean);
 
-  try {
-    const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: lines.join('\n'),
-        parse_mode: 'HTML'
+  const text = lines.join('\n');
+
+  // надсилаємо всім отримувачам паралельно
+  const results = await Promise.allSettled(
+    TELEGRAM_CHAT_IDS.map(chatId =>
+      fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: text,
+          parse_mode: 'HTML'
+        })
+      }).then(async res => {
+        if (!res.ok) {
+          const info = await res.json().catch(() => ({}));
+          console.warn(`Telegram: не доставлено на ${chatId}.`, info.description || res.status);
+          throw new Error(info.description || res.status);
+        }
+        return true;
       })
-    });
-    return res.ok;
-  } catch (err) {
-    console.error('Помилка відправки в Telegram:', err);
-    return false;
-  }
+    )
+  );
+
+  const delivered = results.filter(r => r.status === 'fulfilled').length;
+  if (delivered === 0) console.error('Заявку не доставлено жодному отримувачу.');
+  return delivered > 0;
 }
 
 function collectForm(form) {
