@@ -311,3 +311,19 @@ if (burger && mainNav) {
     if (e.key === 'Escape') setNav(false);
   });
 }
+
+// ====== ЛОГОТИПИ ПАРТНЕРІВ: запасний варіант ======
+// Якщо файл логотипа не завантажився — показуємо назву партнера текстом,
+// щоб замість «битої» картинки блок залишався охайним.
+document.querySelectorAll('.partner img').forEach(img => {
+  const fallback = () => {
+    const card = img.parentNode;
+    if (!card) return;
+    img.style.display = 'none';
+    card.dataset.name = img.alt || '';
+    card.classList.add('no-logo');
+  };
+  img.addEventListener('error', fallback);
+  // якщо картинка вже встигла впасти до навішування обробника
+  if (img.complete && img.naturalWidth === 0) fallback();
+});

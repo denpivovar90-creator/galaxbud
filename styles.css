@@ -523,3 +523,10 @@ section[id]{scroll-margin-top:90px}
   .partner{min-height:96px;padding:16px}
   .partner img{max-height:46px}
 }
+
+/* якщо логотип не завантажився — показуємо назву партнера текстом */
+.partner.no-logo::after{
+  content:attr(data-name);
+  font-family:'Oswald','Inter',sans-serif;font-weight:600;font-size:16px;
+  letter-spacing:1px;text-transform:uppercase;color:#334155;text-align:center;
+}
