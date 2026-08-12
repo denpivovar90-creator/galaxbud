@@ -31,9 +31,20 @@ const counterIO = new IntersectionObserver((entries) => {
       counterIO.unobserve(e.target);
     }
   });
-}, { threshold: 0.4 });
+}, { threshold: 0.01 });
 
 document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+
+// Страховка: якщо блок так і не потрапив у зону видимості (наприклад, на низькому
+// екрані він лишається під згином), показуємо кінцеве число замість нуля.
+setTimeout(() => {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    if (el.textContent.trim() === '0') {
+      const target = parseInt(el.dataset.count, 10);
+      if (!isNaN(target)) el.textContent = target.toLocaleString('uk-UA');
+    }
+  });
+}, 2500);
 
 // ====== Невеликий parallax для фону героя ======
 const heroBg = document.querySelector('.hero-bg');
