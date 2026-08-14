@@ -434,7 +434,7 @@ body.modal-open{overflow:hidden}
 .burger[aria-expanded="true"] span:nth-child(3){width:26px;transform:translateY(-8px) rotate(-45deg)}
 
 /* відступ під фіксовану шапку для якірних переходів */
-section[id]{scroll-margin-top:90px}
+section[id]{scroll-margin-top:100px}
 
 @media(max-width:1100px){
   .burger{display:flex}
@@ -529,4 +529,18 @@ section[id]{scroll-margin-top:90px}
   content:attr(data-name);
   font-family:'Oswald','Inter',sans-serif;font-weight:600;font-size:16px;
   letter-spacing:1px;text-transform:uppercase;color:#334155;text-align:center;
+}
+
+/* вузькі екрани: ущільнюємо шапку, щоб усе лишалося в один ряд */
+@media(max-width:420px){
+  .site-header{padding:10px 14px;gap:8px}
+  .site-header.scrolled{padding:7px 14px}
+  .logo-img{height:44px}
+  .site-header.scrolled .logo-img{height:40px}
+  .phone{font-size:14px;gap:5px}
+  .phone-ico{font-size:14px}
+  .lang-switch{font-size:13px;gap:4px}
+  .burger{width:34px}
+  .burger span{width:22px}
+  .burger span:nth-child(2){width:16px}
 }
