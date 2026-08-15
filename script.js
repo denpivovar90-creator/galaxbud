@@ -42,6 +42,8 @@ setTimeout(() => {
     if (el.textContent.trim() === '0') {
       const target = parseInt(el.dataset.count, 10);
       if (!isNaN(target)) el.textContent = target.toLocaleString('uk-UA');
+      // більше не спостерігаємо, інакше при прокрутці лічильник почне рахувати заново
+      counterIO.unobserve(el);
     }
   });
 }, 2500);
