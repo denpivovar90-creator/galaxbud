@@ -1,0 +1,351 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/img"
+public_folder: "/"
+
+locale: "uk"
+
+collections:
+  # ================= КОНТАКТИ ТА ЗАГАЛЬНЕ =================
+  - name: "settings"
+    label: "Налаштування сайту"
+    files:
+      - name: "site"
+        label: "Контакти та реквізити"
+        file: "src/_data/site.json"
+        fields:
+          - { name: company, label: "Назва компанії", widget: string }
+          - { name: url, label: "Адреса сайту", widget: string, hint: "Наприклад https://galaxplus.com.ua — потрібно для Google" }
+          - { name: phone, label: "Телефон (як показувати)", widget: string }
+          - { name: phoneLink, label: "Телефон для дзвінка", widget: string, hint: "У форматі +380631671177, без пробілів" }
+          - { name: email, label: "Email", widget: string }
+          - { name: address, label: "Адреса (укр)", widget: string }
+          - { name: addressEn, label: "Адреса (англ)", widget: string }
+          - { name: hours, label: "Графік роботи (укр)", widget: string }
+          - { name: hoursEn, label: "Графік роботи (англ)", widget: string }
+          - { name: facebook, label: "Facebook", widget: string, required: false, hint: "Залиште порожнім — посилання не показуватиметься" }
+          - { name: instagram, label: "Instagram", widget: string, required: false }
+          - { name: telegramToken, label: "Токен Telegram-бота", widget: string, required: false }
+          - { name: telegramChats, label: "Кому надсилати заявки (ID)", widget: list, required: false, field: { name: id, label: "Chat ID", widget: string } }
+
+  # ================= ТЕКСТИ УКРАЇНСЬКОЮ =================
+  - name: "ua"
+    label: "Тексти — українська"
+    files:
+      - name: "ua"
+        label: "Усі тексти сайту (укр)"
+        file: "src/_data/ua.json"
+        fields:
+          - { name: lang, label: "Код мови", widget: hidden, default: "uk" }
+          - { name: title, label: "Заголовок вкладки браузера", widget: string }
+          - { name: description, label: "Опис для Google", widget: text, hint: "150–160 символів. Це те, що люди бачать у пошуку." }
+
+          - name: nav
+            label: "Меню"
+            widget: object
+            fields:
+              - { name: about, label: "Про компанію", widget: string }
+              - { name: services, label: "Послуги", widget: string }
+              - { name: portfolio, label: "Портфоліо", widget: string }
+              - { name: partners, label: "Партнери", widget: string }
+              - { name: contacts, label: "Контакти", widget: string }
+
+          - name: hero
+            label: "Перший екран"
+            widget: object
+            fields:
+              - { name: tag, label: "Напис угорі", widget: string }
+              - { name: title, label: "Головний заголовок", widget: text, hint: "Перенести рядок: <br>" }
+              - { name: lead, label: "Підзаголовок", widget: text }
+              - { name: button, label: "Напис на кнопці", widget: string }
+              - { name: metric1num, label: "Цифра 1", widget: string }
+              - { name: metric1label, label: "Підпис до цифри 1", widget: string }
+              - { name: metric2num, label: "Цифра 2", widget: string }
+              - { name: metric2label, label: "Підпис до цифри 2", widget: string }
+
+          - name: services
+            label: "Блок «Що ми робимо»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: intro, label: "Опис", widget: text }
+              - { name: cta, label: "Напис на картці при наведенні", widget: string }
+
+          - name: advantages
+            label: "Блок «Переваги»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+
+          - name: portfolio
+            label: "Блок «Наші роботи»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: notice, label: "Текст, поки немає проєктів", widget: text, hint: "Показується, доки не додано жодного проєкту" }
+              - { name: button, label: "Напис на кнопці", widget: string }
+              - { name: buttonService, label: "Як підписувати заявку з цієї кнопки", widget: string }
+
+          - name: partners
+            label: "Блок «Партнери»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: intro, label: "Опис", widget: text }
+
+          - name: about
+            label: "Блок «Про нас»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: text, hint: "Перенести рядок: <br>" }
+              - { name: text1, label: "Перший абзац", widget: text }
+              - { name: text2, label: "Другий абзац", widget: text }
+              - { name: stat1num, label: "Цифра 1", widget: string }
+              - { name: stat1label, label: "Підпис до цифри 1", widget: string }
+              - { name: stat2num, label: "Цифра 2", widget: string }
+              - { name: stat2label, label: "Підпис до цифри 2", widget: string }
+
+          - name: contacts
+            label: "Блок «Контакти»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: text }
+              - { name: lead, label: "Опис", widget: text }
+              - { name: labelPhone, label: "Підпис «Телефон»", widget: string }
+              - { name: labelEmail, label: "Підпис «Email»", widget: string }
+              - { name: labelAddress, label: "Підпис «Адреса»", widget: string }
+              - { name: labelHours, label: "Підпис «Графік»", widget: string }
+              - { name: formTitle, label: "Заголовок форми", widget: string }
+              - { name: formSub, label: "Підзаголовок форми", widget: string }
+              - { name: fieldName, label: "Поле «Ім'я»", widget: string }
+              - { name: fieldPhone, label: "Поле «Телефон»", widget: string }
+              - { name: fieldEmail, label: "Поле «Email»", widget: string }
+              - { name: fieldComment, label: "Поле «Коментар»", widget: string }
+              - { name: submit, label: "Кнопка надсилання", widget: string }
+              - { name: note, label: "Примітка під кнопкою", widget: text }
+              - { name: formService, label: "Як підписувати заявку з цієї форми", widget: string }
+
+          - name: modal
+            label: "Спливаюче вікно заявки"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис угорі", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: sub, label: "Опис", widget: text }
+              - { name: fieldComment, label: "Поле «Коментар»", widget: string }
+              - { name: successTitle, label: "Заголовок після надсилання", widget: string }
+              - { name: successText, label: "Текст після надсилання", widget: text }
+              - { name: close, label: "Підпис кнопки закриття", widget: string }
+
+          - name: footer
+            label: "Підвал"
+            widget: object
+            fields:
+              - { name: rights, label: "Копірайт", widget: string }
+
+  # ================= ТЕКСТИ АНГЛІЙСЬКОЮ =================
+  - name: "en"
+    label: "Тексти — англійська"
+    files:
+      - name: "en"
+        label: "Усі тексти сайту (англ)"
+        file: "src/_data/en.json"
+        fields:
+          - { name: lang, label: "Код мови", widget: hidden, default: "en" }
+          - { name: title, label: "Заголовок вкладки браузера", widget: string }
+          - { name: description, label: "Опис для Google", widget: text }
+
+          - name: nav
+            label: "Меню"
+            widget: object
+            fields:
+              - { name: about, label: "About", widget: string }
+              - { name: services, label: "Services", widget: string }
+              - { name: portfolio, label: "Portfolio", widget: string }
+              - { name: partners, label: "Partners", widget: string }
+              - { name: contacts, label: "Contacts", widget: string }
+
+          - name: hero
+            label: "Перший екран"
+            widget: object
+            fields:
+              - { name: tag, label: "Напис угорі", widget: string }
+              - { name: title, label: "Головний заголовок", widget: text }
+              - { name: lead, label: "Підзаголовок", widget: text }
+              - { name: button, label: "Напис на кнопці", widget: string }
+              - { name: metric1num, label: "Цифра 1", widget: string }
+              - { name: metric1label, label: "Підпис до цифри 1", widget: string }
+              - { name: metric2num, label: "Цифра 2", widget: string }
+              - { name: metric2label, label: "Підпис до цифри 2", widget: string }
+
+          - name: services
+            label: "Блок «Що ми робимо»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: intro, label: "Опис", widget: text }
+              - { name: cta, label: "Напис на картці", widget: string }
+
+          - name: advantages
+            label: "Блок «Переваги»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+
+          - name: portfolio
+            label: "Блок «Наші роботи»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: notice, label: "Текст, поки немає проєктів", widget: text }
+              - { name: button, label: "Напис на кнопці", widget: string }
+              - { name: buttonService, label: "Як підписувати заявку", widget: string }
+
+          - name: partners
+            label: "Блок «Партнери»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: intro, label: "Опис", widget: text }
+
+          - name: about
+            label: "Блок «Про нас»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: text }
+              - { name: text1, label: "Перший абзац", widget: text }
+              - { name: text2, label: "Другий абзац", widget: text }
+              - { name: stat1num, label: "Цифра 1", widget: string }
+              - { name: stat1label, label: "Підпис до цифри 1", widget: string }
+              - { name: stat2num, label: "Цифра 2", widget: string }
+              - { name: stat2label, label: "Підпис до цифри 2", widget: string }
+
+          - name: contacts
+            label: "Блок «Контакти»"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис над заголовком", widget: string }
+              - { name: title, label: "Заголовок", widget: text }
+              - { name: lead, label: "Опис", widget: text }
+              - { name: labelPhone, label: "Підпис «Телефон»", widget: string }
+              - { name: labelEmail, label: "Підпис «Email»", widget: string }
+              - { name: labelAddress, label: "Підпис «Адреса»", widget: string }
+              - { name: labelHours, label: "Підпис «Графік»", widget: string }
+              - { name: formTitle, label: "Заголовок форми", widget: string }
+              - { name: formSub, label: "Підзаголовок форми", widget: string }
+              - { name: fieldName, label: "Поле «Ім'я»", widget: string }
+              - { name: fieldPhone, label: "Поле «Телефон»", widget: string }
+              - { name: fieldEmail, label: "Поле «Email»", widget: string }
+              - { name: fieldComment, label: "Поле «Коментар»", widget: string }
+              - { name: submit, label: "Кнопка надсилання", widget: string }
+              - { name: note, label: "Примітка під кнопкою", widget: text }
+              - { name: formService, label: "Як підписувати заявку", widget: string }
+
+          - name: modal
+            label: "Спливаюче вікно заявки"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Надпис угорі", widget: string }
+              - { name: title, label: "Заголовок", widget: string }
+              - { name: sub, label: "Опис", widget: text }
+              - { name: fieldComment, label: "Поле «Коментар»", widget: string }
+              - { name: successTitle, label: "Заголовок після надсилання", widget: string }
+              - { name: successText, label: "Текст після надсилання", widget: text }
+              - { name: close, label: "Підпис кнопки закриття", widget: string }
+
+          - name: footer
+            label: "Підвал"
+            widget: object
+            fields:
+              - { name: rights, label: "Копірайт", widget: string }
+
+  # ================= ПОСЛУГИ =================
+  - name: "services"
+    label: "Послуги (картки)"
+    files:
+      - name: "services"
+        label: "Картки в блоці «Що ми робимо»"
+        file: "src/_data/services.json"
+        fields:
+          - name: items
+            label: "Послуги"
+            label_singular: "послугу"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: num, label: "Номер", widget: string, hint: "Наприклад 01" }
+              - { name: image, label: "Фото", widget: image, hint: "Вертикальне фото, приблизно 800×1000" }
+              - { name: title, label: "Заголовок на картці (укр)", widget: string, hint: "Перенести рядок: <br>" }
+              - { name: titleEn, label: "Заголовок на картці (англ)", widget: string }
+              - { name: name, label: "Назва в заявці (укр)", widget: string, hint: "Так послуга буде підписана в заявці, що приходить у Telegram" }
+              - { name: nameEn, label: "Назва в заявці (англ)", widget: string }
+
+  # ================= ПЕРЕВАГИ =================
+  - name: "advantages"
+    label: "Переваги"
+    files:
+      - name: "advantages"
+        label: "Блок «Переваги»"
+        file: "src/_data/advantages.json"
+        fields:
+          - name: items
+            label: "Переваги"
+            label_singular: "перевагу"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: num, label: "Велика цифра", widget: string, required: false, hint: "Наприклад 15–20%. Залиште порожнім, якщо цифри немає" }
+              - { name: title, label: "Заголовок (укр)", widget: string }
+              - { name: titleEn, label: "Заголовок (англ)", widget: string }
+              - { name: text, label: "Текст (укр)", widget: text }
+              - { name: textEn, label: "Текст (англ)", widget: text }
+
+  # ================= ПАРТНЕРИ =================
+  - name: "partners"
+    label: "Партнери"
+    files:
+      - name: "partners"
+        label: "Логотипи партнерів"
+        file: "src/_data/partners.json"
+        fields:
+          - name: items
+            label: "Партнери"
+            label_singular: "партнера"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Назва компанії", widget: string }
+              - { name: image, label: "Логотип", widget: image, hint: "PNG з прозорим фоном" }
+
+  # ================= ПОРТФОЛІО =================
+  - name: "projects"
+    label: "Портфоліо (наші роботи)"
+    files:
+      - name: "projects"
+        label: "Виконані проєкти"
+        file: "src/_data/projects.json"
+        fields:
+          - name: items
+            label: "Проєкти"
+            label_singular: "проєкт"
+            widget: list
+            summary: "{{fields.title}}"
+            required: false
+            hint: "Поки список порожній — на сайті показується напис про технічні роботи"
+            fields:
+              - { name: title, label: "Назва об'єкта (укр)", widget: string }
+              - { name: titleEn, label: "Назва об'єкта (англ)", widget: string, required: false }
+              - { name: image, label: "Фото", widget: image, required: false }

@@ -1,0 +1,84 @@
+{
+  "lang": "en",
+  "title": "GalaxPlus — Construction Company",
+  "description": "GalaxPlus — construction, reconstruction and renovation of facilities of any complexity. Turnkey general contracting in Kyiv.",
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "partners": "Partners",
+    "contacts": "Contacts"
+  },
+  "hero": {
+    "tag": "General contractor · from design to turnkey delivery",
+    "title": "We deliver complex projects —<br>precisely, reliably and&nbsp;on&nbsp;time",
+    "lead": "Full engineering cycle: design, construction, reconstruction and renovation of facilities of any complexity.",
+    "button": "Get a project estimate",
+    "metric1num": "5",
+    "metric1label": "years of experience",
+    "metric2num": "40",
+    "metric2label": "completed projects of varying complexity"
+  },
+  "services": {
+    "eyebrow": "Our services",
+    "title": "What we do",
+    "intro": "We turn complex technical challenges into reliable, ready-to-operate solutions. Each area is a distinct competence with its own team.",
+    "cta": "Send a request"
+  },
+  "advantages": {
+    "eyebrow": "Why clients choose us",
+    "title": "Benefits of the all-in-one format"
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "title": "Our work",
+    "notice": "Technical work is under way — our projects will be added to the site shortly.",
+    "button": "Get in touch",
+    "buttonService": "General enquiry"
+  },
+  "partners": {
+    "eyebrow": "Partners",
+    "title": "Who we work with",
+    "intro": "We partner with trusted manufacturers and suppliers — this guarantees the quality of materials and equipment, and keeps every project on schedule."
+  },
+  "about": {
+    "eyebrow": "Who we are",
+    "title": "GalaxPlus —<br>building&nbsp;since 2021",
+    "text1": "GalaxPlus brings together engineers, architects and builders who have spent more than five years setting the turnkey standard in Kyiv: from the first sketch to a fully fitted-out space. We work on housing, offices, retail sites and industrial facilities — and everywhere we follow one principle: complex decisions should be clear to the client.",
+    "text2": "Every project is led by a dedicated manager, and technical supervision is carried out by the specialists who designed and installed those utilities themselves. That is why we spot risks before they arise and deliver a result that matches the design down to the last millimetre.",
+    "stat1num": "5+",
+    "stat1label": "years of experience",
+    "stat2num": "40+",
+    "stat2label": "completed projects of varying complexity"
+  },
+  "contacts": {
+    "eyebrow": "Contact us",
+    "title": "Let's discuss<br>your project",
+    "lead": "Leave your contact details and we will get back to you within the working day to discuss the details.",
+    "labelPhone": "Phone",
+    "labelEmail": "Email",
+    "labelAddress": "Address",
+    "labelHours": "Working hours",
+    "formTitle": "Fill in the form",
+    "formSub": "A manager will call you back shortly",
+    "fieldName": "Your name",
+    "fieldPhone": "Phone",
+    "fieldEmail": "Email (optional)",
+    "fieldComment": "Message",
+    "submit": "Send request",
+    "note": "By clicking the button you consent to the processing of your personal data.",
+    "formService": "Contacts section form"
+  },
+  "modal": {
+    "eyebrow": "Request",
+    "title": "Send a request",
+    "sub": "A manager will contact you within the working day and answer all your questions.",
+    "fieldComment": "Message (optional)",
+    "successTitle": "Thank you for your request!",
+    "successText": "We have received your enquiry and will be in touch shortly.",
+    "close": "Close"
+  },
+  "footer": {
+    "rights": "© 2026 GalaxPlus. All rights reserved."
+  }
+}

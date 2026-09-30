@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "num": "15–20%",
+      "title": "Економія бюджету",
+      "titleEn": "Budget savings",
+      "text": "Комплексне замовлення оптимізує логістику й матеріали та виключає дороговартісні переробки.",
+      "textEn": "An all-in-one order optimises logistics and materials and eliminates costly rework."
+    },
+    {
+      "num": "",
+      "title": "Єдина точка відповідальності",
+      "titleEn": "Single point of responsibility",
+      "text": "Не потрібно шукати винних між архітектором, будівельником і дизайнером — ми відповідаємо за кожне рішення на об'єкті.",
+      "textEn": "No need to work out who is at fault between the architect, builder and designer — we are accountable for every decision on site."
+    },
+    {
+      "num": "",
+      "title": "Відсутність помилок стикування",
+      "titleEn": "No coordination errors",
+      "text": "Ми самі робимо розрахунки й оздоблення та точно знаємо, де проходить кожна труба чи кабель.",
+      "textEn": "We handle both the calculations and the finishing, so we know exactly where every pipe and cable runs."
+    },
+    {
+      "num": "",
+      "title": "Чіткий графік",
+      "titleEn": "A clear schedule",
+      "text": "Усі етапи синхронізовані: оздоблення стартує одразу після інженерних мереж, меблі приїжджають вчасно.",
+      "textEn": "Every stage is synchronised: finishing starts right after the utilities, and furniture arrives on time."
+    },
+    {
+      "num": "",
+      "title": "Фіксована ціна",
+      "titleEn": "Fixed price",
+      "text": "Прораховуємо кошторис на старті — ви знаєте фінальну вартість ще до початку першого етапу робіт.",
+      "textEn": "We prepare the estimate upfront — you know the final cost before the first stage even begins."
+    },
+    {
+      "num": "",
+      "title": "Кваліфікована команда",
+      "titleEn": "A qualified team",
+      "text": "Лише сертифіковані інженери, архітектори та вузькопрофільні фахівці з багаторічним досвідом.",
+      "textEn": "Only certified engineers, architects and specialist tradespeople with many years of experience."
+    }
+  ]
+}

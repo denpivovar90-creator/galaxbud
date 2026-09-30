@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "name": "FARBMIX",
+      "image": "/partner-farbmix.png"
+    },
+    {
+      "name": "AERAS",
+      "image": "/partner-aeras.png"
+    },
+    {
+      "name": "Daiko",
+      "image": "/partner-daiko.png"
+    },
+    {
+      "name": "LUXCOM GROUP",
+      "image": "/partner-luxcom.png"
+    },
+    {
+      "name": "TRIBUD GROUP",
+      "image": "/partner-tribud.png"
+    },
+    {
+      "name": "VENTS",
+      "image": "/partner-vents.png"
+    },
+    {
+      "name": "GCHV",
+      "image": "/partner-gchv.png"
+    },
+    {
+      "name": "БУДМАРКЕТ",
+      "image": "/partner-budmarket.png"
+    }
+  ]
+}

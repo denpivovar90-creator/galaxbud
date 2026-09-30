@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "num": "01",
+      "image": "/service-01.jpg",
+      "title": "Проєктування<br>та креслення",
+      "titleEn": "Design<br>&amp; drawings",
+      "name": "Проєктування та креслення",
+      "nameEn": "Design & Drawings"
+    },
+    {
+      "num": "02",
+      "image": "/service-02.jpg",
+      "title": "Інженерні<br>розрахунки",
+      "titleEn": "Engineering<br>calculations",
+      "name": "Інженерні розрахунки",
+      "nameEn": "Engineering Calculations"
+    },
+    {
+      "num": "03",
+      "image": "/service-03.jpg",
+      "title": "Будівництво<br>та реалізація",
+      "titleEn": "Construction<br>&amp; delivery",
+      "name": "Будівництво та реалізація",
+      "nameEn": "Construction & Delivery"
+    },
+    {
+      "num": "04",
+      "image": "/service-04.jpg",
+      "title": "Генеральний<br>підряд",
+      "titleEn": "General<br>contracting",
+      "name": "Генеральний підряд",
+      "nameEn": "General Contracting"
+    },
+    {
+      "num": "05",
+      "image": "/service-05.jpg",
+      "title": "Комплектація<br>меблями",
+      "titleEn": "Furniture<br>fit-out",
+      "name": "Комплектація меблями",
+      "nameEn": "Furniture Fit-Out"
+    },
+    {
+      "num": "06",
+      "image": "/service-06.jpg",
+      "title": "Оздоблення<br>та ремонт",
+      "titleEn": "Finishing<br>&amp; renovation",
+      "name": "Оздоблення та ремонт",
+      "nameEn": "Finishing & Renovation"
+    }
+  ]
+}
