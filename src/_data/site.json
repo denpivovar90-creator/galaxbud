@@ -1,15 +1,18 @@
 {
-  "company": "GalaxPlus",
-  "url": "https://galaxplus.com.ua",
-  "phone": "+38 063 167 11 77",
-  "phoneLink": "+380631671177",
-  "email": "galaxplus4@gmail.com",
-  "address": "Київ, вул. Ярославів Вал, буд. 33-А, приміщення 4",
-  "addressEn": "33-A Yaroslaviv Val St., unit 4, Kyiv",
-  "hours": "з 9:00 до 18:00",
-  "hoursEn": "9:00 — 18:00",
   "facebook": "",
+  "phoneLink": "+380631671177",
+  "phone": "+38 063 167 11 90",
+  "url": "https://galaxplus.com.ua",
+  "hours": "з 9:00 до 18:00",
   "instagram": "",
+  "address": "Київ, вул. Ярославів Вал, буд. 33-А, приміщення 4",
+  "hoursEn": "9:00 — 18:00",
   "telegramToken": "8477554349:AAFjViKZWgSTaXeKcXHcU8jD9Q3LOCh0Rps",
-  "telegramChats": ["8784431836", "6719768956"]
+  "telegramChats": [
+    "8784431836",
+    "6719768956"
+  ],
+  "email": "galaxplus4@gmail.com",
+  "company": "GalaxPlusssss",
+  "addressEn": "33-A Yaroslaviv Val St., unit 4, Kyiv"
 }
